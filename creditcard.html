@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form" onsubmit="return numb()">
+    <input type="text" placeholder="Enter your credit card details" name="card" length="16" onkeyup="check()" id="er">
+    <span id="msg"></span><br>
+    <button type="submit">submit</button>
+    <span id="msg2"></span>
+    </form>
+    <script>
+        function check() {
+            let a;
+            if (document.form.card.value[0] == 4 && document.form.card.value[1] > 1) {
+                document.getElementById("msg").innerHTML="VISA";
+                document.getElementById("msg").innerHTML=style.color = blue;
+
+            }
+            else if (document.form.card.value[0] == 5 && document.form.card.value[1] == 1) {
+                document.getElementById("msg").innerHTML = "Master Card";
+                document.getElementById("msg").style.color = "yellow";
+            }
+            else if (document.form.card.value[0] == 6 && document.form.card.value[1] <= 5) {
+                document.getElementById("msg").innerHTML = "Rupay";
+                document.getElementById("msg").style.color = "green";
+            }
+            else {
+                document.getElementById("msg").innerHTML = "Please enter proper number!!";
+                document.getElementById("msg").style.color = "red";
+                return false;
+            }
+        }
+
+        function numb() {
+            let b;
+
+
+            if (!document.form.card.value.match(/^[0-9]+$/)) {
+                document.getElementById("msg2").innerHTML = 'Please Enter number only!!'
+                document.getElementById("msg2").style.color = "red";
+                return false;
+            }
+            else if (document.form.card.value.length == 16) {
+
+            }
+
+            else {
+                document.getElementById("msg2").innerHTML = 'Please Enter coorect detail!!'
+                document.getElementById("msg2").style.color = "red";
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>
